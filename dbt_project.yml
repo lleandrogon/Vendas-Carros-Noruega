@@ -32,7 +32,7 @@ models:
 
 seeds:
   vendas_carros_noruega:
-    +schema: seeds
+    +schema: raw
     tags: ['seeds']
 
 snapshots:

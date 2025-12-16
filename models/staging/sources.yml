@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Dados brutos de vendas de carros na Noruega"
+    schema: dbt_raw
+    loader: postgres
+
+    tables:
+      - name: sales_by_make
+        description: "Tabela com vendas de carros por fabricante"
+        columns:
+          - name: Year
+          - name: Month
+          - name: Make
+            tests:
+              - not_null
+          - name: Quantity
+          - name: Pct
+
+      - name: sales_by_model
+        description: "Tabela com vendas de carros por modelo"
+        columns:
+          - name: Year
+          - name: Month
+          - name: Make
+          - name: Model
+            tests:
+              - not_null
+          - name: Quantity
+          - name: Pct
+
+      - name: sales_by_month
+        description: "Tabela com vendas de carros por mês"
+        columns:
+          - name: Year
+          - name: Month
+            tests:
+              - not_null
+          - name: Quantity
+          - name: Quantity_YoY
+          - name: Import
+          - name: Import_YoY
+          - name: Used
+          - name: Used_YoY
+          - name: Avg_CO2
+          - name: Bensin_Co2
+          - name: Diesel_Co2
+          - name: Quantity_Diesel
+          - name: Diesel_Share
+          - name: Diesel_Share_LY
+          - name: Quantity_Hybrid
+          - name: Quantity_Electric
+          - name: Import_Electric
