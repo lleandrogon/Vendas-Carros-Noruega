@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: mt_sales_by_make_year_month
+    description: Tabela de vendas por fabricantes, ano e mês
+
+    columns:
+      - name: year
+        description: Ano das vendas
+        tests:
+          - not_null
+      - name: month
+        description: Mês das vendas (1-12)
+        tests:
+          - not_null
+      - name: make
+        description: Fabricante do carro
+      - name: total_quantity
+        description: Quantidade total vendida

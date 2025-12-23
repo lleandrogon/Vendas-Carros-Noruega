@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: mt_eletric_growth
+    description: Tabela de crescimento ano a ano (YoY) das vendas mensais
+
+    columns:
+      - name: year
+        description: Ano das vendas
+        tests:
+          - not_null
+      - name: month
+        description: Mês das vendas (1-12)
+        tests:
+          - not_null
+      - name: year_month
+        description: Junção de ano com mês
+      - name: quantity_electric
+        description: Quantidade de elétricos vendidos no período
+      - name: quantity_electric_ly
+        description: Quantidade de elétricos vendidos no mesmo mês do ano passado
+      - name: electric_growth_yoy_pct
+        description: Porcentagem de crescimento de elétricos de acordo com o mesmo mês do ano passado
+
